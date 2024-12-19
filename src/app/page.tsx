@@ -1,9 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import HeroSection from '@/components/landing/hero-section';
-import StatsSection from '@/components/landing/stats-section';
 import ProjectsSection from '@/components/landing/projects-section';
-import type { Project, StatItem } from '@/types';
+import type { Project } from '@/types';
 
 export const metadata: Metadata = {
   title: 'AI Innovation Lab',
@@ -11,13 +10,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const stats: StatItem[] = [
-    { iconSymbol: '💻', label: 'AI Models', value: '15+' },
-    { iconSymbol: '🎯', label: 'Accuracy Rate', value: '98.5%' },
-    { iconSymbol: '📊', label: 'Data Processed', value: '1.2B+' },
-    { iconSymbol: '👥', label: 'Contributors', value: '50+' }
-  ];
-
   const projects: Project[] = [
     {
       title: 'Alfie',
@@ -51,7 +43,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <HeroSection />
-      <StatsSection stats={stats} />
+      {/* StatsSection removed */}
       <ProjectsSection projects={projects} />
     </main>
   );
