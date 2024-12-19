@@ -1,6 +1,7 @@
 import { Sparkles, BookOpen, Brain } from 'lucide-react'
+import type { NextPage } from 'next'
 
-export default function Home() {
+const Home: NextPage = () => {
   const projects = [
     {
       id: 'alfie',
@@ -35,7 +36,7 @@ export default function Home() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 pt-16">
+    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       {/* Hero Section */}
       <div className="relative overflow-hidden border-b border-gray-800/50">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-teal-500/10" />
@@ -127,3 +128,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
