@@ -1,12 +1,14 @@
 import type { NextConfig } from 'next'
 
 const config: NextConfig = {
+  // Basic configuration
   reactStrictMode: true,
-  // Disable optimizations that might cause CSS loading issues
-  optimizeFonts: false,
-  // Disable experimental features for now
+  
+  // Minimal experimental features
   experimental: {
-    appDir: true
+    serverActions: {
+      bodySizeLimit: '2mb'
+    }
   }
 }
 
