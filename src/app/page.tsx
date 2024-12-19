@@ -1,10 +1,18 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import HeroSection from '@/components/landing/hero-section';
 import StatsSection from '@/components/landing/stats-section';
 import ProjectCard from '@/components/landing/project-card';
 import type { Project, StatItem } from '@/types';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'AI Innovation Lab',
+  description: 'Next-Generation AI Innovation Lab',
+};
+
+export const runtime = 'edge';
+
+export default function HomePage() {
   const stats: StatItem[] = [
     { iconSymbol: '💻', label: 'AI Models', value: '15+' },
     { iconSymbol: '🎯', label: 'Accuracy Rate', value: '98.5%' },
