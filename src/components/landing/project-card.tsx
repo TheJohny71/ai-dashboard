@@ -1,7 +1,6 @@
 import React from 'react';
 
 interface ProjectCardProps {
-  id: string;
   title: string;
   subtitle: string;
   description: string;
@@ -9,13 +8,11 @@ interface ProjectCardProps {
   iconSymbol: string;
   link: string;
   tech: string[];
-  isActive: boolean;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }
 
 const ProjectCard = ({
-  id,
   title,
   subtitle,
   description,
