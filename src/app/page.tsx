@@ -51,22 +51,20 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+    <main className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <HeroSection />
       <StatsSection stats={stats} />
       
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <section className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid gap-8">
           {projects.map(project => (
             <ProjectCard
               key={project.title}
               {...project}
-              onMouseEnter={() => {}}
-              onMouseLeave={() => {}}
             />
           ))}
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
