@@ -1,6 +1,5 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import Navigation from '@/components/landing/navigation'
 
 export const metadata: Metadata = {
   title: 'AI Innovation Lab',
@@ -15,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="min-h-screen bg-gray-950">
-        <Navigation />
+        {/* We'll add Navigation back here once it's fixed */}
         <main className="relative">
           {children}
         </main>
