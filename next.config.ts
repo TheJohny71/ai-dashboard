@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
+import { NextConfig } from 'next'
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const config: NextConfig = {
+  output: 'export',
+  basePath: '/ai-dashboard',
+  images: {
+    unoptimized: true,
+  },
+}
 
-export default nextConfig;
+export default config
