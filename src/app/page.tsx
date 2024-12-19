@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { Metadata } from 'next';
 import HeroSection from '@/components/landing/hero-section';
 import StatsSection from '@/components/landing/stats-section';
-import ProjectCard from '@/components/landing/project-card';
+import ProjectsSection from '@/components/landing/projects-section';
 import type { Project, StatItem } from '@/types';
 
 export const metadata: Metadata = {
@@ -13,8 +13,6 @@ export const metadata: Metadata = {
 export const runtime = 'edge';
 
 export default function HomePage() {
-  const [activeProject, setActiveProject] = useState<string | null>(null);
-
   const stats: StatItem[] = [
     { iconSymbol: '💻', label: 'AI Models', value: '15+' },
     { iconSymbol: '🎯', label: 'Accuracy Rate', value: '98.5%' },
@@ -56,19 +54,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
       <HeroSection />
       <StatsSection stats={stats} />
-      
-      <section className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid gap-8">
-          {projects.map(project => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-              onMouseEnter={() => setActiveProject(project.title)}
-              onMouseLeave={() => setActiveProject(null)}
-            />
-          ))}
-        </div>
-      </section>
+      <ProjectsSection projects={projects} />
     </main>
   );
 }
