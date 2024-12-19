@@ -1,15 +1,19 @@
-import { coreConfig } from '@eslint/js';
+/** @type {import('eslint').Linter.Config} */
+const config = {
+  root: true,
+  extends: [
+    'next/core-web-vitals',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
+  rules: {
+    '@typescript-eslint/no-unused-vars': ['warn', { 
+      argsIgnorePattern: '^_',
+      varsIgnorePattern: '^_',
+    }],
+    'react/no-unescaped-entities': 'off',
+  }
+};
 
-export default [
-  {
-    ignores: ['.next/*', 'node_modules/*'],
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx'],
-    rules: {
-      '@typescript-eslint/no-unused-vars': 'off',
-      'no-unused-vars': 'off'
-    }
-  },
-  coreConfig
-];
+export default config;
