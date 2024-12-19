@@ -2,20 +2,18 @@ import React from 'react';
 import HeroSection from '@/components/landing/hero-section';
 import StatsSection from '@/components/landing/stats-section';
 import ProjectCard from '@/components/landing/project-card';
+import type { Project, StatItem } from '@/types';
 
 export default function Home() {
-  const [activeProject, setActiveProject] = React.useState<string | null>(null);
-
-  const stats = [
+  const stats: StatItem[] = [
     { iconSymbol: '💻', label: 'AI Models', value: '15+' },
     { iconSymbol: '🎯', label: 'Accuracy Rate', value: '98.5%' },
     { iconSymbol: '📊', label: 'Data Processed', value: '1.2B+' },
     { iconSymbol: '👥', label: 'Contributors', value: '50+' }
   ];
 
-  const projects = [
+  const projects: Project[] = [
     {
-      id: 'alfie',
       title: 'Alfie',
       subtitle: 'AI-Powered Assistant',
       description: 'Advanced AI system leveraging state-of-the-art language models to revolutionize task automation and decision support.',
@@ -25,7 +23,6 @@ export default function Home() {
       tech: ['GPT-4', 'PyTorch', 'React', 'Next.js']
     },
     {
-      id: 'lexliber',
       title: 'LexLiber',
       subtitle: 'AI Research Platform',
       description: 'Neural search-powered research platform that understands context and delivers precise, relevant results instantly.',
@@ -35,7 +32,6 @@ export default function Home() {
       tech: ['BERT', 'Elasticsearch', 'Python', 'FastAPI']
     },
     {
-      id: 'seneca',
       title: 'Seneca',
       subtitle: 'AI Knowledge System',
       description: 'Self-improving knowledge system that learns from interactions and adapts to evolving information needs.',
@@ -55,11 +51,10 @@ export default function Home() {
         <div className="grid gap-8">
           {projects.map(project => (
             <ProjectCard
-              key={project.id}
+              key={project.title}
               {...project}
-              isActive={activeProject === project.id}
-              onMouseEnter={() => setActiveProject(project.id)}
-              onMouseLeave={() => setActiveProject(null)}
+              onMouseEnter={() => {}}
+              onMouseLeave={() => {}}
             />
           ))}
         </div>
