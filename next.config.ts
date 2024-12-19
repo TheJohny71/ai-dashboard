@@ -1,24 +1,17 @@
-import type { NextConfig } from 'next';
+import type { Config } from 'next'
 
-const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
-  typescript: {
-    // Don't fail build on TS errors during development
-    ignoreBuildErrors: process.env.NODE_ENV === 'development',
-  },
-  eslint: {
-    // Don't fail build on ESLint errors during development
-    ignoreDuringBuilds: process.env.NODE_ENV === 'development',
-  },
+const config: Config = {
+  // Enable strict mode for better development
+  reactStrictMode: true,
+
+  // Type-safe experimental features
   experimental: {
-    // Enable modern features
-    typedRoutes: true,
-    serverActions: true,
+    // Configure server actions with proper typing
+    serverActions: {
+      allowedOrigins: ['localhost:3000'],
+      bodySizeLimit: '2mb'
+    }
   }
-};
+}
 
-export default nextConfig;
+export default config
