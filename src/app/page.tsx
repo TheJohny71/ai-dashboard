@@ -10,8 +10,6 @@ export const metadata: Metadata = {
   description: 'Next-Generation AI Innovation Lab',
 };
 
-export const runtime = 'edge';
-
 export default function HomePage() {
   const stats: StatItem[] = [
     { iconSymbol: '💻', label: 'AI Models', value: '15+' },
