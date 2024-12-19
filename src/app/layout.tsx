@@ -1,9 +1,13 @@
-import './globals.css'
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import Navigation from '@/components/landing/navigation'
+import './globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'AI Innovation Lab',
-  description: 'Exploring the frontiers of artificial intelligence through practical applications and groundbreaking research.',
+  description: 'Exploring the frontiers of artificial intelligence',
 }
 
 export default function RootLayout({
@@ -12,12 +16,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="min-h-screen bg-gray-950">
-        {/* We'll add Navigation back here once it's fixed */}
-        <main className="relative">
-          {children}
-        </main>
+    <html lang="en">
+      <body className={inter.className}>
+        <Navigation />
+        {children}
       </body>
     </html>
   )
