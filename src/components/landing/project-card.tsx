@@ -8,11 +8,11 @@ interface ProjectCardProps {
   iconSymbol: string;
   link: string;
   tech: string[];
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  onMouseEnter?: () => void;  // Made optional with ?
+  onMouseLeave?: () => void;  // Made optional with ?
 }
 
-const ProjectCard = ({
+const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   subtitle,
   description,
@@ -22,7 +22,7 @@ const ProjectCard = ({
   tech,
   onMouseEnter,
   onMouseLeave
-}: ProjectCardProps) => {
+}) => {
   return (
     <div
       className="group relative rounded-2xl border border-gray-800/50 bg-gray-800/30 backdrop-blur-sm hover:bg-gray-800/50 hover:border-purple-500/50 transition-all duration-300"
@@ -31,6 +31,7 @@ const ProjectCard = ({
     >
       <div className="p-8 grid md:grid-cols-2 gap-8 items-center">
         <div className="space-y-6">
+          {/* App Header */}
           <div className="flex items-center gap-3">
             <div className="relative w-12 h-12">
               <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${color} opacity-20`} />
@@ -46,10 +47,10 @@ const ProjectCard = ({
             </div>
           </div>
 
-          <p className="text-gray-400">
-            {description}
-          </p>
+          {/* Description */}
+          <p className="text-gray-400">{description}</p>
 
+          {/* Tech Stack */}
           <div className="flex flex-wrap gap-2">
             {tech.map(item => (
               <span 
@@ -61,6 +62,7 @@ const ProjectCard = ({
             ))}
           </div>
 
+          {/* Action Button */}
           <div>
             <a
               href={link}
@@ -74,6 +76,7 @@ const ProjectCard = ({
           </div>
         </div>
 
+        {/* Preview Area */}
         <div className="relative aspect-video rounded-lg overflow-hidden bg-gray-900/50 border border-gray-800/50">
           <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-5`} />
           <div className="absolute inset-0 flex items-center justify-center">

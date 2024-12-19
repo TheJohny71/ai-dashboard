@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Metadata } from 'next';
 import HeroSection from '@/components/landing/hero-section';
 import StatsSection from '@/components/landing/stats-section';
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
 export const runtime = 'edge';
 
 export default function HomePage() {
+  const [activeProject, setActiveProject] = useState<string | null>(null);
+
   const stats: StatItem[] = [
     { iconSymbol: '💻', label: 'AI Models', value: '15+' },
     { iconSymbol: '🎯', label: 'Accuracy Rate', value: '98.5%' },
@@ -61,6 +63,8 @@ export default function HomePage() {
             <ProjectCard
               key={project.title}
               {...project}
+              onMouseEnter={() => setActiveProject(project.title)}
+              onMouseLeave={() => setActiveProject(null)}
             />
           ))}
         </div>
