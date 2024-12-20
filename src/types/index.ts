@@ -1,3 +1,5 @@
+// Ensure this file exists at src/types/index.ts or similar
+
 export interface Project {
   title: string;
   subtitle: string;
@@ -6,10 +8,4 @@ export interface Project {
   iconSymbol: string;
   link: string;
   tech: string[];
-}
-
-export interface StatItem {
-  label: string;
-  value: string;
-  iconSymbol: string;
 }
