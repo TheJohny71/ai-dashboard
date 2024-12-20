@@ -1,30 +1,14 @@
-'use client';
+import ProjectCard from './project-card'
 
-import React, { useState } from 'react';
-import ProjectCard from './project-card';
-import type { Project } from '@/types';
-
-interface ProjectsSectionProps {
-  projects: Project[];
-}
-
-const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
-  const [activeProject, setActiveProject] = useState<string | null>(null);
-
+export default function ProjectsSection({ projects }: { projects: any[] }) {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
-      <div className="grid gap-8">
-        {projects.map(project => (
-          <ProjectCard
-            key={project.title}
-            {...project}
-            onMouseEnter={() => setActiveProject(project.title)}
-            onMouseLeave={() => setActiveProject(null)}
-          />
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <h2 className="text-3xl font-bold text-white mb-10 text-center">Projects</h2>
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </section>
-  );
-};
-
-export default ProjectsSection;
+  )
+}
