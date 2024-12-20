@@ -1,6 +1,11 @@
+import { Project } from '@/types'
 import ProjectCard from './project-card'
 
-export default function ProjectsSection({ projects }: { projects: any[] }) {
+interface ProjectsSectionProps {
+  projects: Project[];
+}
+
+export default function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold text-white mb-10 text-center">Projects</h2>
