@@ -1,7 +1,4 @@
-import { 
-  ArrowRight, 
-  ArrowUpRight
-} from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 import { solutions } from '../data/solutions';
 
@@ -34,7 +31,7 @@ export default function PortfolioPage() {
 
                 {/* Connector Arrow and Label */}
                 {index < 2 && (
-                  <div className="absolute left-full top-1/2 -translate-y-1/2 -translate-x-1/2 text-center">
+                  <div className="absolute left-full top-1/2 -translate-y-1/2 -translate-x-1/2 text-center hidden md:block">
                     <ArrowRight className="w-6 h-6 text-gray-600 mb-1" />
                     <div className="text-xs text-gray-500 whitespace-nowrap">
                       {flowConnectors[index]}
@@ -91,7 +88,7 @@ export default function PortfolioPage() {
                     </div>
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-purple-400">Practice Areas:</span>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {solution.practices.map((practice, i) => (
                           <span 
                             key={i}
