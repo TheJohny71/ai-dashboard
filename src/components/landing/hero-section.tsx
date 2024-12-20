@@ -1,21 +1,19 @@
-import React from 'react';
+import Link from 'next/link'
 
-const HeroSection = () => {
+export default function HeroSection() {
   return (
-    <div className="relative overflow-hidden border-b border-gray-800/50">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-teal-500/10" />
-      <div className="max-w-7xl mx-auto px-4 py-24 relative">
-        <div className="max-w-3xl">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent mb-6">
-            Next-Generation AI Innovation Lab
-          </h1>
-          <p className="text-xl text-gray-400 mb-8">
-            Exploring the frontiers of artificial intelligence through practical applications and groundbreaking research.
-          </p>
-        </div>
+    <section className="flex flex-col items-center justify-center text-center min-h-screen py-20 px-4">
+      <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-purple-500">
+        AI Innovation Lab
+      </h1>
+      <p className="mt-4 text-gray-300 max-w-2xl">
+        Empower your firm with advanced AI tools designed to streamline legal research, improve contract review efficiency, and enhance client advisory services.
+      </p>
+      <div className="mt-8">
+        <Link href="#projects" className="inline-block bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded">
+          Explore Projects
+        </Link>
       </div>
-    </div>
-  );
-};
-
-export default HeroSection;
+    </section>
+  )
+}
