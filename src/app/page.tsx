@@ -1,7 +1,7 @@
 // src/app/page.tsx
 import React from 'react';
 import type { Metadata } from 'next';
-import HeroSection from '@/components/landing/hero-section';
+import HeroSection from './components/landing/hero-section';
 
 export const metadata: Metadata = {
   title: 'AI Innovation Lab',
