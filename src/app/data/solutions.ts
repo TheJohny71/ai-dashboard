@@ -1,6 +1,7 @@
 import { Sparkles, BookOpen, Brain } from 'lucide-react';
+import type { Solution } from '../types';
 
-export const solutions = [
+export const solutions: Solution[] = [
   {
     id: 'alfie',
     title: 'Alfie',
